@@ -2,7 +2,6 @@ import type { PageServerLoad } from "./$types";
 import cheerio from "cheerio";
 
 export const load = (async () => {
-	// const parser = new DOMParser();
 	const headers = new Headers();
 	headers.set(
 		"User-Agent",
@@ -17,7 +16,6 @@ export const load = (async () => {
 				method: "GET",
 				headers: headers,
 			});
-			console.log(">>", response);
 
 			const page_html = await response.text();
 			const page_doc = cheerio.load(page_html);

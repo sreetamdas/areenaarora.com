@@ -21,13 +21,14 @@
 	</div>
 </section>
 
-<section class="mx-auto flex max-w-3xl flex-col items-center p-4">
-	<h2 class="py-20 text-3xl font-bold">Articles of Interest</h2>
+<section class="m-4 mx-auto flex max-w-4xl flex-col items-center">
+	<h2 class="py-20 text-4xl font-bold">Articles of Interest</h2>
 
-	<div class="flex gap-4">
+	<div class="flex w-fit flex-wrap gap-4">
 		{#each data.parsed_articles_content as parsed_article}
-			<article>
-				<h3 class="text-lg font-semibold leading-tight">{parsed_article.title}</h3>
+			<article class="max-w-72">
+				<img src={parsed_article.image} alt={parsed_article.title} />
+				<h3 class="pt-4 text-lg font-semibold leading-tight">{parsed_article.title}</h3>
 				<p class="pt-4 text-sm italic">{parsed_article.description}</p>
 			</article>
 		{/each}
