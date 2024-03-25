@@ -1,0 +1,9 @@
+compatibility_flags = ["nodejs_compat"]
+name = "areenaarora-com"
+node_compat = true
+
+[[d1_databases]]
+binding = "CLOUDFLARE_D1_DB"
+database_id = "9ac535ec-ca83-4e84-92fe-d1c8c9a190e6"
+database_name = "areenaarora-com"
+preview_database_id = "CLOUDFLARE_D1_DB"
