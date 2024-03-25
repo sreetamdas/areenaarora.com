@@ -2,12 +2,12 @@ import { sequence } from "@sveltejs/kit/hooks";
 import { error, type Handle } from "@sveltejs/kit";
 import { building, dev } from "$app/environment";
 
-import { Miniflare } from "miniflare";
-
 import { luciaAuthHandle } from "$lib/server/auth";
 
 const cloudflareHandle: Handle = async ({ event, resolve }) => {
 	if (dev) {
+		const { Miniflare } = await import("miniflare");
+
 		const mf = new Miniflare({
 			modules: true,
 			script: `
